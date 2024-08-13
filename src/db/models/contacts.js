@@ -10,22 +10,23 @@ const contactsSchema = new Schema({
         required: true,
     },
     email:{
-        type: String 
+        type: String
     },
     isFavourite:{
         type:  Boolean,
         default: false
-    },  
+    },
     contactType:{
         type: String,
-        enum: ['work', 'home', 'personal'], 
-        required: true, 
+        enum: ['work', 'home', 'personal'],
+        required: true,
         default: 'personal'
-    },   
-    
+    },
+
 },
     {
-    timestamps: true,
+        timestamps: true,
+        versionKey: false,
   });
 
 
