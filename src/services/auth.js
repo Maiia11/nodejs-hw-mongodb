@@ -2,7 +2,10 @@ import createHttpError from "http-errors";
 import { User } from "../db/models/users.js";
 
 import bcrypt from "bcrypt";
+import { Session } from "../db/models/session.js";
 
+import randomBytes from 'crypto';
+import { FIFTEEN_MINUTES, THIRTY_DAYS } from "../constants/index.js";
 
 
 export const registerUser = async (payload) => {
@@ -30,4 +33,17 @@ export const loginUser = async (payload) => {
     if (isEqual) {
         throw createHttpError(401, "Unauthorized");
     }
+
+    await Session.deleteOne({ userId: user._id });
+    const accessToken = randomBytes(30).toString('base64');
+    const refreshToken = randomBytes(30).toString('base64');
+
+    return await Session.create({
+        userId: user._id,
+        accessToken,
+        refreshToken,
+        accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
+        refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
+    });
+
 };
