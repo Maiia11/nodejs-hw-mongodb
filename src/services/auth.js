@@ -4,7 +4,7 @@ import { User } from "../db/models/users.js";
 import bcrypt from "bcrypt";
 import { Session } from "../db/models/session.js";
 
-import randomBytes from 'crypto';
+import { randomBytes } from 'crypto';
 import { FIFTEEN_MINUTES, THIRTY_DAYS } from "../constants/index.js";
 
 
