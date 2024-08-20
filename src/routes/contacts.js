@@ -7,14 +7,14 @@ import { isValid } from "../middlewares/isValidId.js";
 
 const router = Router();
 
-router.get("/contacts",ctrlWrapper(getContactsController) );
+router.get("/",ctrlWrapper(getContactsController) );
 
-router.get("/contacts/:contactId", isValid, ctrlWrapper(getContactByIdController));
+router.get("/:contactId", isValid, ctrlWrapper(getContactByIdController));
 
-router.post("/contacts", validateBody(createContactSchema), ctrlWrapper(createContactController));
+router.post("/", validateBody(createContactSchema), ctrlWrapper(createContactController));
 
-router.patch("/contacts/:contactId", isValid, validateBody(patchContactSchema), ctrlWrapper(patchContactController));
+router.patch("/:contactId", isValid, validateBody(patchContactSchema), ctrlWrapper(patchContactController));
 
-router.delete("/contacts/:contactId", isValid, ctrlWrapper(deleteContactByIdController));
+router.delete("/:contactId", isValid, ctrlWrapper(deleteContactByIdController));
 
 export default router;
