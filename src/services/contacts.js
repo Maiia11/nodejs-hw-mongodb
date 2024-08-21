@@ -17,6 +17,9 @@ export const getAllContacts = async ({ page = 1, perPage = 10, sortBy = '_id', s
         contactsQuery.where('isFavourite').equals(filter.isFavourite);
     }
 
+    console.log('Query:', contactsQuery.getQuery()); // Выводит параметры запроса
+    console.log('Filters:', { userId, filter }); // Выводит переданные фильтры
+
 
     const [contactsCount, contacts] = await Promise.all([ContactsCollection.find().merge(contactsQuery).countDocuments(),
         contactsQuery.skip(skip).limit(limit).sort({ [sortBy]: sortOrder }).exec()]);
