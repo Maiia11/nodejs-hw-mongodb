@@ -11,13 +11,7 @@ const transporter = nodemailer.createTransport({
     pass: env(SMTP.SMTP_PASSWORD),
   },
 });
+
 export const sendEmail = async (options) => {
-    transporter.sendMail(options, (error, info) => {
-  if (error) {
-    console.error('Error sending email:', error);
-  } else {
-    console.log('Email sent successfully:', info);
-  }
-});
-    return await transporter.sendMail(options);
+  return await transporter.sendMail(options);
 };
