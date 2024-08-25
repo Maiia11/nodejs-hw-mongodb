@@ -1,5 +1,10 @@
 import mongoose from 'mongoose';
 
+console.log('SMTP Host:', process.env.SMTP_HOST);
+console.log('SMTP Port:', process.env.SMTP_PORT);
+console.log('SMTP User:', process.env.SMTP_USER);
+console.log('SMTP Password:', process.env.SMTP_PASSWORD);
+
 export const initMongoConnection = async () => {
     try {
         const user = process.env.MONGODB_USER;
