@@ -36,6 +36,6 @@ properties:
     type: string
     example: 66cb4472bd9e3a744b4fd82e
   photo:
-    description: 'Link to contact's photo'
+    description: 'Link to contact photo'
     type: string
-    example: "https://res.cloudinary.com/dgq6i6dck/image/upload/v1724693920/os7fxj5z6topl5ejyyn3.png"
+    example: 'https://res.cloudinary.com/dgq6i6dck/image/upload/v1724693920/os7fxj5z6topl5ejyyn3.png'
