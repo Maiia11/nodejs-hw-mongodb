@@ -5,14 +5,20 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  description: <опис вашого додатку>
+  description: This is a documentation of contacts app
 tags:
-  # теги, що ви будете використовувати
+  - name: Contacts
+    description: Operation about users
+  - name: Auth
+    description: Auth operations.
+
 servers:
   - url: http://localhost:3000
-  - url: #посилання на задеплоєний сайт
+  - url: http://example.com/api/v1
 paths:
-  # тут будуть посилання на ендпоінти
+  /students/{id}:
+    get:
+      $ref: ../swagger/paths/contacts/{id}/get.yamal
 components:
   securitySchemes:
     bearerAuth:
