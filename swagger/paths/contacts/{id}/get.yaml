@@ -4,14 +4,14 @@ summary: Get contact by id
 operationId: getContact
 description: 'Get contact by id'
 security:
-  -bearerAuth: []
+  - bearerAuth: []
 parameters:
-  -in: path
-  name: id
-  required: true
-  schema:
-    type: string
-    example: '66a64da95d94c59c14f13ba5'
+  - in: path
+    name: id
+    required: true
+    schema:
+      type: string
+      example: '66a64da95d94c59c14f13ba5'
 responses:
   '200':
     description: 'Get contact by id'
@@ -19,9 +19,10 @@ responses:
       application/json:
         schema:
           type: object
-          required: -status
-            -message
-            -data
+          required:
+            - status
+            - message
+            - data
           properties:
             status:
               type: integer
@@ -30,7 +31,5 @@ responses:
               type: string
               example: Successfully found contact whith id 66a64da95d94c59c14f13ba5!
             data:
-              type: object
               $ref: '../../../components/schemas/contact.yaml'
-  '401':
     $ref: '../../../components/responses/401.yaml'
