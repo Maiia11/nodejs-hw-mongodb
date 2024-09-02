@@ -142,31 +142,31 @@
                           "type": "array",
                           "items": {
                             "$ref": "#/components/schemas/contact"
-                          },
-                          "page": {
-                            "type": "number",
-                            "example": 2
-                          },
-                          "perPage": {
-                            "type": "number",
-                            "example": 4
-                          },
-                          "totalItems": {
-                            "type": "number",
-                            "example": 4
-                          },
-                          "totalPages": {
-                            "type": "number",
-                            "example": 4
-                          },
-                          "hasNextPage": {
-                            "type": "boolean",
-                            "example": false
-                          },
-                          "hasPreviousPage": {
-                            "type": "boolean",
-                            "example": true
                           }
+                        },
+                        "page": {
+                          "type": "number",
+                          "example": 2
+                        },
+                        "perPage": {
+                          "type": "number",
+                          "example": 4
+                        },
+                        "totalItems": {
+                          "type": "number",
+                          "example": 4
+                        },
+                        "totalPages": {
+                          "type": "number",
+                          "example": 4
+                        },
+                        "hasNextPage": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "hasPreviousPage": {
+                          "type": "boolean",
+                          "example": true
                         }
                       }
                     }
@@ -200,9 +200,7 @@
                 "required": [
                   "name",
                   "phoneNumber",
-                  "email",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -234,15 +232,10 @@
                       "personal"
                     ]
                   },
-                  "userId": {
-                    "description": "Contact's user id",
-                    "type": "string",
-                    "example": "66cb4472bd9e3a744b4fd82e"
-                  },
                   "photo": {
                     "description": "Link to contact photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/dgq6i6dck/image/upload/v1724693920/os7fxj5z6topl5ejyyn3.png"
+                    "format": "binary"
                   }
                 }
               }
@@ -403,15 +396,10 @@
                       "personal"
                     ]
                   },
-                  "userId": {
-                    "description": "Contact's user id",
-                    "type": "string",
-                    "example": "66cb4472bd9e3a744b4fd82e"
-                  },
                   "photo": {
                     "description": "Link to contact photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/dgq6i6dck/image/upload/v1724693920/os7fxj5z6topl5ejyyn3.png"
+                    "format": "binary"
                   }
                 }
               }

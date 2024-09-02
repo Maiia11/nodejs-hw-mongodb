@@ -38,14 +38,10 @@ requestBody:
             description: "Contact's contact type"
             type: string
             enum: ['work', 'home', 'personal']
-          userId:
-            description: "Contact's user id"
-            type: string
-            example: 66cb4472bd9e3a744b4fd82e
           photo:
             description: 'Link to contact photo'
             type: string
-            example: 'https://res.cloudinary.com/dgq6i6dck/image/upload/v1724693920/os7fxj5z6topl5ejyyn3.png'
+            format: binary
 responses:
   '200':
     description: 'Successfully update the contact'
